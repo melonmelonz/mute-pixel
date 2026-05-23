@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>mute.</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#000;color:#e8e0d0;font-family:'Space Mono',monospace;min-height:100vh;overflow-x:hidden;image-rendering:pixelated}.starfield{position:fixed;inset:0;z-index:0;pointer-events:none}.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--dur) ease-in-out infinite alternate}@keyframes twinkle{0%{opacity:var(--lo)}100%{opacity:var(--hi)}}.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:3rem 1.5rem 5rem}header{text-align:center;margin-bottom:3rem}h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;letter-spacing:0.2em;color:#d4a437;text-shadow:0 0 30px rgba(212,164,55,0.5),0 0 80px rgba(212,164,55,0.15);margin-bottom:0.5rem}.subtitle{font-size:clamp(0.7rem,2vw,0.9rem);color:#5a5040;letter-spacing:0.3em}.divider{width:120px;height:1px;margin:1.5rem auto;background:linear-gradient(90deg,transparent,#d4a437,transparent)}h2{font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:#6a6050;text-align:center;margin:2.5rem 0 1.5rem}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:0.5rem;margin-bottom:2rem}.grid-lg{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.card{background:rgba(255,255,255,0.02);border:1px solid rgba(0,220,255,0.08);border-radius:6px;padding:0.5rem 0.3rem;display:flex;flex-direction:column;align-items:center;gap:0.3rem;transition:all 0.3s}.card:hover{border-color:rgba(0,220,255,0.3);box-shadow:0 0 15px rgba(0,220,255,0.1)}.card.wide{grid-column:span 2}.card.featured{border-color:rgba(212,164,55,0.2);background:rgba(212,164,55,0.02)}.card.featured:hover{border-color:rgba(212,164,55,0.5);box-shadow:0 0 20px rgba(212,164,55,0.15)}.card img{image-rendering:pixelated;max-width:100%;max-height:160px;object-fit:contain}.card-label{font-size:0.45rem;letter-spacing:0.1em;color:#4a5a5a;text-transform:lowercase;text-align:center}.compass{position:relative;width:280px;height:280px;margin:0 auto 2rem;border:1px solid rgba(255,160,40,0.1);border-radius:50%;box-shadow:0 0 30px rgba(255,160,40,0.05)}.compass-sprite{position:absolute;image-rendering:pixelated;width:48px;height:48px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px rgba(212,164,55,0.3))}.quote{text-align:center;font-size:0.75rem;color:#3a3530;letter-spacing:0.15em;font-style:italic;margin:3rem 0 1rem;line-height:1.8}footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-spacing:0.3em}.section-note{text-align:center;font-size:0.55rem;color:#6a5a3a;margin-bottom:1rem;letter-spacing:0.1em}</style></head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#e8e0d0;font-family:'Space Mono',monospace;min-height:100vh;overflow-x:hidden;image-rendering:pixelated}
+.starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--dur) ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:var(--lo)}100%{opacity:var(--hi)}}
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:3rem 1.5rem 5rem}
+header{text-align:center;margin-bottom:3rem}
+h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;letter-spacing:0.2em;color:#d4a437;text-shadow:0 0 30px rgba(212,164,55,0.5),0 0 80px rgba(212,164,55,0.15);margin-bottom:0.5rem}
+.subtitle{font-size:clamp(0.7rem,2vw,0.9rem);color:#5a5040;letter-spacing:0.3em}
+.divider{width:120px;height:1px;margin:1.5rem auto;background:linear-gradient(90deg,transparent,#d4a437,transparent)}
+h2{font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:#6a6050;text-align:center;margin:2.5rem 0 1rem}
+.section-note{text-align:center;font-size:0.55rem;color:#5a4a3a;margin-bottom:0.75rem;letter-spacing:0.1em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:0.4rem;margin-bottom:1.5rem}
+.grid-lg{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.grid-showcase{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:rgba(255,255,255,0.02);border:1px solid rgba(0,220,255,0.06);border-radius:6px;padding:0.4rem;display:flex;flex-direction:column;align-items:center;gap:0.2rem;transition:all 0.3s}
+.card:hover{border-color:rgba(0,220,255,0.3);box-shadow:0 0 12px rgba(0,220,255,0.08)}
+.card.wide{grid-column:span 2}
+.card.showcase{border-color:rgba(212,164,55,0.15);grid-column:span 2}
+.card.showcase:hover{border-color:rgba(212,164,55,0.4);box-shadow:0 0 20px rgba(212,164,55,0.12)}
+.card img{image-rendering:pixelated;max-width:100%;max-height:200px;object-fit:contain}
+.card-label{font-size:0.4rem;letter-spacing:0.08em;color:#4a5a5a;text-transform:lowercase;text-align:center}
+.tileset-zoom{overflow:hidden;border-radius:4px}.tileset-zoom img{transition:transform 0.3s}.tileset-zoom:hover img{transform:scale(3);transform-origin:center}
+.compass{position:relative;width:280px;height:280px;margin:0 auto 2rem;border:1px solid rgba(255,160,40,0.1);border-radius:50%;box-shadow:0 0 30px rgba(255,160,40,0.05)}
+.compass-sprite{position:absolute;image-rendering:pixelated;width:48px;height:48px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px rgba(212,164,55,0.3))}
+.quote{text-align:center;font-size:0.75rem;color:#3a3530;letter-spacing:0.15em;font-style:italic;margin:3rem 0 1rem;line-height:1.8}
+footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-spacing:0.3em}
+.stats{text-align:center;font-size:0.6rem;color:#4a4a3a;margin:1rem 0 2rem;letter-spacing:0.15em}
+</style></head>
 <body><div class="starfield" id="sf"></div><div class="wrap">
 <header><h1>mute.</h1><p class="subtitle">he is alone with his thoughts</p><div class="divider"></div></header>
 
-<section><h2>Original Art — The Cast</h2>
-<p class="section-note">hand-drawn pixel art by the creator</p>
-<div class="grid"><div class="card"><img src="../assets/display/crystal-head-concept.png" alt="crystal head concept"><span class="card-label">crystal head concept</span></div>
-<div class="card"><img src="../assets/display/doug-concept.png" alt="doug concept"><span class="card-label">doug concept</span></div>
-<div class="card"><img src="../assets/display/green-alien-concept.png" alt="green alien concept"><span class="card-label">green alien concept</span></div>
-<div class="card"><img src="../assets/display/original-arcade-room.png" alt="original arcade room"><span class="card-label">original arcade room</span></div>
-<div class="card"><img src="../assets/display/original-treasure-room.png" alt="original treasure room"><span class="card-label">original treasure room</span></div>
-<div class="card"><img src="../assets/display/red-hair-concept.png" alt="red hair concept"><span class="card-label">red hair concept</span></div></div></section>
+<p class="stats">155 assets &middot; 27 animations &middot; 12 tilesets &middot; 4 playable characters</p>
 
-<section><h2>Original Animations</h2>
-<p class="section-note">original sprite sheet walks + arcade room + treasure chest</p>
-<div class="grid"><div class="card"><img src="../assets/gifs/original-arcade-room-anim.gif" alt="original arcade room anim"><span class="card-label">original arcade room anim</span></div>
-<div class="card"><img src="../assets/gifs/original-chest-anim.gif" alt="original chest anim"><span class="card-label">original chest anim</span></div>
-<div class="card"><img src="../assets/gifs/original-east-walk.gif" alt="original east walk"><span class="card-label">original east walk</span></div>
-<div class="card"><img src="../assets/gifs/original-north-walk.gif" alt="original north walk"><span class="card-label">original north walk</span></div>
-<div class="card"><img src="../assets/gifs/original-south-alt1.gif" alt="original south alt1"><span class="card-label">original south alt1</span></div>
-<div class="card"><img src="../assets/gifs/original-south-alt2.gif" alt="original south alt2"><span class="card-label">original south alt2</span></div>
-<div class="card"><img src="../assets/gifs/original-south-idle.gif" alt="original south idle"><span class="card-label">original south idle</span></div>
-<div class="card"><img src="../assets/gifs/original-south-walk.gif" alt="original south walk"><span class="card-label">original south walk</span></div>
-<div class="card"><img src="../assets/gifs/original-west-walk.gif" alt="original west walk"><span class="card-label">original west walk</span></div></div></section>
+<section><h2>Original Art — Main Cast (4)</h2><p class="section-note">hand-drawn pixel art by the creator</p><div class="grid grid-showcase"><div class="card showcase"><img src="../assets/display/crystal-head-concept.png"><span class="card-label">crystal head concept</span></div>
+<div class="card showcase"><img src="../assets/display/doug-concept.png"><span class="card-label">doug concept</span></div>
+<div class="card showcase"><img src="../assets/display/green-alien-concept.png"><span class="card-label">green alien concept</span></div>
+<div class="card showcase"><img src="../assets/display/red-hair-concept.png"><span class="card-label">red hair concept</span></div></div></section>
+
+<section><h2>Original Environments (3)</h2><p class="section-note">the arcade room and treasure room</p><div class="grid grid-showcase"><div class="card showcase"><img src="../assets/display/showcase-arcade-room.png"><span class="card-label">arcade room</span></div>
+<div class="card showcase"><img src="../assets/display/showcase-main-cast.png"><span class="card-label">main cast</span></div>
+<div class="card showcase"><img src="../assets/display/showcase-treasure-room.png"><span class="card-label">treasure room</span></div></div></section>
+
+<section><h2>Original Animations (9)</h2><p class="section-note">walk cycles, idle, chest open, arcade room</p><div class="grid"><div class="card"><img src="../assets/gifs/original-arcade-room-anim.gif"><span class="card-label">original arcade room anim</span></div>
+<div class="card"><img src="../assets/gifs/original-chest-anim.gif"><span class="card-label">original chest anim</span></div>
+<div class="card"><img src="../assets/gifs/original-east-walk.gif"><span class="card-label">original east walk</span></div>
+<div class="card"><img src="../assets/gifs/original-north-walk.gif"><span class="card-label">original north walk</span></div>
+<div class="card"><img src="../assets/gifs/original-south-alt1.gif"><span class="card-label">original south alt1</span></div>
+<div class="card"><img src="../assets/gifs/original-south-alt2.gif"><span class="card-label">original south alt2</span></div>
+<div class="card"><img src="../assets/gifs/original-south-idle.gif"><span class="card-label">original south idle</span></div>
+<div class="card"><img src="../assets/gifs/original-south-walk.gif"><span class="card-label">original south walk</span></div>
+<div class="card"><img src="../assets/gifs/original-west-walk.gif"><span class="card-label">original west walk</span></div></div></section>
 
 <section><h2>Doug — 8 Directions</h2><div class="compass"><img class="compass-sprite" src="../assets/space-traveler/rotations/south.png" style="left:140px;top:240px" alt="south">
 <img class="compass-sprite" src="../assets/space-traveler/rotations/south-east.png" style="left:211px;top:211px" alt="south-east">
@@ -35,111 +65,180 @@
 <img class="compass-sprite" src="../assets/space-traveler/rotations/south-west.png" style="left:69px;top:211px" alt="south-west">
 </div></section>
 
-<section><h2>Generated Animations (15)</h2>
-<div class="grid"><div class="card"><img src="../assets/gifs/death-east.gif" alt="death east"><span class="card-label">death east</span></div>
-<div class="card"><img src="../assets/gifs/death-north-east.gif" alt="death north east"><span class="card-label">death north east</span></div>
-<div class="card"><img src="../assets/gifs/death-north-west.gif" alt="death north west"><span class="card-label">death north west</span></div>
-<div class="card"><img src="../assets/gifs/death-north.gif" alt="death north"><span class="card-label">death north</span></div>
-<div class="card"><img src="../assets/gifs/death-south-east.gif" alt="death south east"><span class="card-label">death south east</span></div>
-<div class="card"><img src="../assets/gifs/death-south.gif" alt="death south"><span class="card-label">death south</span></div>
-<div class="card"><img src="../assets/gifs/death-west.gif" alt="death west"><span class="card-label">death west</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-east.gif" alt="zero g float east"><span class="card-label">zero g float east</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-north-east.gif" alt="zero g float north east"><span class="card-label">zero g float north east</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-north-west.gif" alt="zero g float north west"><span class="card-label">zero g float north west</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-north.gif" alt="zero g float north"><span class="card-label">zero g float north</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-south-east.gif" alt="zero g float south east"><span class="card-label">zero g float south east</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-south-west.gif" alt="zero g float south west"><span class="card-label">zero g float south west</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-south.gif" alt="zero g float south"><span class="card-label">zero g float south</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-west.gif" alt="zero g float west"><span class="card-label">zero g float west</span></div></div></section>
+<section><h2>Character Action Animations (15)</h2><p class="section-note">zero-g float, death</p><div class="grid"><div class="card"><img src="../assets/gifs/death-east.gif"><span class="card-label">death east</span></div>
+<div class="card"><img src="../assets/gifs/death-north-east.gif"><span class="card-label">death north east</span></div>
+<div class="card"><img src="../assets/gifs/death-north-west.gif"><span class="card-label">death north west</span></div>
+<div class="card"><img src="../assets/gifs/death-north.gif"><span class="card-label">death north</span></div>
+<div class="card"><img src="../assets/gifs/death-south-east.gif"><span class="card-label">death south east</span></div>
+<div class="card"><img src="../assets/gifs/death-south.gif"><span class="card-label">death south</span></div>
+<div class="card"><img src="../assets/gifs/death-west.gif"><span class="card-label">death west</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-east.gif"><span class="card-label">zero g float east</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-north-east.gif"><span class="card-label">zero g float north east</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-north-west.gif"><span class="card-label">zero g float north west</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-north.gif"><span class="card-label">zero g float north</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-south-east.gif"><span class="card-label">zero g float south east</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-south-west.gif"><span class="card-label">zero g float south west</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-south.gif"><span class="card-label">zero g float south</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-west.gif"><span class="card-label">zero g float west</span></div></div></section>
 
-<section><h2>World Objects (78)</h2>
-<div class="grid"><div class="card"><img src="../assets/display/alien-bones-90094465.png" alt="alien bones 90094465"><span class="card-label">alien bones 90094465</span></div>
-<div class="card"><img src="../assets/display/alien-bones-9659ad95.png" alt="alien bones 9659ad95"><span class="card-label">alien bones 9659ad95</span></div>
-<div class="card"><img src="../assets/display/alien-bones-a19a4eed.png" alt="alien bones a19a4eed"><span class="card-label">alien bones a19a4eed</span></div>
-<div class="card"><img src="../assets/display/alien-bones-ca18a7d9.png" alt="alien bones ca18a7d9"><span class="card-label">alien bones ca18a7d9</span></div>
-<div class="card"><img src="../assets/display/alien-tree-6.png" alt="alien tree 6"><span class="card-label">alien tree 6</span></div>
-<div class="card"><img src="../assets/display/alien-tree-7.png" alt="alien tree 7"><span class="card-label">alien tree 7</span></div>
-<div class="card"><img src="../assets/display/alien-tree-8.png" alt="alien tree 8"><span class="card-label">alien tree 8</span></div>
-<div class="card"><img src="../assets/display/alien-tree-9.png" alt="alien tree 9"><span class="card-label">alien tree 9</span></div>
-<div class="card"><img src="../assets/display/antenna-tower.png" alt="antenna tower"><span class="card-label">antenna tower</span></div>
-<div class="card"><img src="../assets/display/chest-jrpg-4b2f359b.png" alt="chest jrpg 4b2f359b"><span class="card-label">chest jrpg 4b2f359b</span></div>
-<div class="card"><img src="../assets/display/chest-jrpg-9b239a11.png" alt="chest jrpg 9b239a11"><span class="card-label">chest jrpg 9b239a11</span></div>
-<div class="card"><img src="../assets/display/chest-jrpg-b4fbf61d.png" alt="chest jrpg b4fbf61d"><span class="card-label">chest jrpg b4fbf61d</span></div>
-<div class="card"><img src="../assets/display/chest-jrpg-c3f07e48.png" alt="chest jrpg c3f07e48"><span class="card-label">chest jrpg c3f07e48</span></div>
-<div class="card"><img src="../assets/display/chest-jrpg-cb51c94f.png" alt="chest jrpg cb51c94f"><span class="card-label">chest jrpg cb51c94f</span></div>
-<div class="card"><img src="../assets/display/chest-jrpg-f35209b7.png" alt="chest jrpg f35209b7"><span class="card-label">chest jrpg f35209b7</span></div>
-<div class="card"><img src="../assets/display/collectible-1.png" alt="collectible 1"><span class="card-label">collectible 1</span></div>
-<div class="card"><img src="../assets/display/collectible-2.png" alt="collectible 2"><span class="card-label">collectible 2</span></div>
-<div class="card"><img src="../assets/display/collectible-3.png" alt="collectible 3"><span class="card-label">collectible 3</span></div>
-<div class="card"><img src="../assets/display/collectible-4.png" alt="collectible 4"><span class="card-label">collectible 4</span></div>
-<div class="card"><img src="../assets/display/collectible-5.png" alt="collectible 5"><span class="card-label">collectible 5</span></div>
-<div class="card"><img src="../assets/display/collectible-6.png" alt="collectible 6"><span class="card-label">collectible 6</span></div>
-<div class="card"><img src="../assets/display/collectible-7.png" alt="collectible 7"><span class="card-label">collectible 7</span></div>
-<div class="card"><img src="../assets/display/crashed-pod-jrpg-49fcd9e3.png" alt="crashed pod jrpg 49fcd9e3"><span class="card-label">crashed pod jrpg 49fcd9e3</span></div>
-<div class="card"><img src="../assets/display/crashed-pod-jrpg-9c2ec2ec.png" alt="crashed pod jrpg 9c2ec2ec"><span class="card-label">crashed pod jrpg 9c2ec2ec</span></div>
-<div class="card"><img src="../assets/display/crashed-pod-jrpg-ab8180bb.png" alt="crashed pod jrpg ab8180bb"><span class="card-label">crashed pod jrpg ab8180bb</span></div>
-<div class="card"><img src="../assets/display/crashed-pod-jrpg-e8311d34.png" alt="crashed pod jrpg e8311d34"><span class="card-label">crashed pod jrpg e8311d34</span></div>
-<div class="card"><img src="../assets/display/crashed-ship-1.png" alt="crashed ship 1"><span class="card-label">crashed ship 1</span></div>
-<div class="card"><img src="../assets/display/crashed-ship-2.png" alt="crashed ship 2"><span class="card-label">crashed ship 2</span></div>
-<div class="card"><img src="../assets/display/cyan-pod-10.png" alt="cyan pod 10"><span class="card-label">cyan pod 10</span></div>
-<div class="card"><img src="../assets/display/cyan-pod-11.png" alt="cyan pod 11"><span class="card-label">cyan pod 11</span></div>
-<div class="card"><img src="../assets/display/cyan-pod-12.png" alt="cyan pod 12"><span class="card-label">cyan pod 12</span></div>
-<div class="card"><img src="../assets/display/data-terminal-1.png" alt="data terminal 1"><span class="card-label">data terminal 1</span></div>
-<div class="card"><img src="../assets/display/data-terminal-2.png" alt="data terminal 2"><span class="card-label">data terminal 2</span></div>
-<div class="card"><img src="../assets/display/data-terminal-3.png" alt="data terminal 3"><span class="card-label">data terminal 3</span></div>
-<div class="card"><img src="../assets/display/data-terminal-4.png" alt="data terminal 4"><span class="card-label">data terminal 4</span></div>
-<div class="card"><img src="../assets/display/data-terminal-5.png" alt="data terminal 5"><span class="card-label">data terminal 5</span></div>
-<div class="card"><img src="../assets/display/data-terminal-styled-2d2ae61c.png" alt="data terminal styled 2d2ae61c"><span class="card-label">data terminal styled 2d2ae61c</span></div>
-<div class="card"><img src="../assets/display/data-terminal-styled-9cb9811b.png" alt="data terminal styled 9cb9811b"><span class="card-label">data terminal styled 9cb9811b</span></div>
-<div class="card"><img src="../assets/display/data-terminal-styled-de48d693.png" alt="data terminal styled de48d693"><span class="card-label">data terminal styled de48d693</span></div>
-<div class="card"><img src="../assets/display/gem-14f47ec5.png" alt="gem 14f47ec5"><span class="card-label">gem 14f47ec5</span></div>
-<div class="card"><img src="../assets/display/gem-58cd46db.png" alt="gem 58cd46db"><span class="card-label">gem 58cd46db</span></div>
-<div class="card"><img src="../assets/display/gem-5c375d7f.png" alt="gem 5c375d7f"><span class="card-label">gem 5c375d7f</span></div>
-<div class="card"><img src="../assets/display/gem-78ae93a5.png" alt="gem 78ae93a5"><span class="card-label">gem 78ae93a5</span></div>
-<div class="card"><img src="../assets/display/gem-a117e5ce.png" alt="gem a117e5ce"><span class="card-label">gem a117e5ce</span></div>
-<div class="card"><img src="../assets/display/gem-be5a313d.png" alt="gem be5a313d"><span class="card-label">gem be5a313d</span></div>
-<div class="card"><img src="../assets/display/grass-patch-0c68df48.png" alt="grass patch 0c68df48"><span class="card-label">grass patch 0c68df48</span></div>
-<div class="card"><img src="../assets/display/grass-patch-2d2ae621.png" alt="grass patch 2d2ae621"><span class="card-label">grass patch 2d2ae621</span></div>
-<div class="card"><img src="../assets/display/grass-patch-76fce7a3.png" alt="grass patch 76fce7a3"><span class="card-label">grass patch 76fce7a3</span></div>
-<div class="card"><img src="../assets/display/grass-patch-fad8d601.png" alt="grass patch fad8d601"><span class="card-label">grass patch fad8d601</span></div>
-<div class="card"><img src="../assets/display/iso-campfire.png" alt="iso campfire"><span class="card-label">iso campfire</span></div>
-<div class="card"><img src="../assets/display/iso-crashed-hull.png" alt="iso crashed hull"><span class="card-label">iso crashed hull</span></div>
-<div class="card"><img src="../assets/display/iso-crystal-cluster.png" alt="iso crystal cluster"><span class="card-label">iso crystal cluster</span></div>
-<div class="card"><img src="../assets/display/iso-dougs-shelter.png" alt="iso dougs shelter"><span class="card-label">iso dougs shelter</span></div>
-<div class="card"><img src="../assets/display/jellyfish-1.png" alt="jellyfish 1"><span class="card-label">jellyfish 1</span></div>
-<div class="card"><img src="../assets/display/jellyfish-2.png" alt="jellyfish 2"><span class="card-label">jellyfish 2</span></div>
-<div class="card"><img src="../assets/display/jellyfish-3.png" alt="jellyfish 3"><span class="card-label">jellyfish 3</span></div>
-<div class="card"><img src="../assets/display/jellyfish-4.png" alt="jellyfish 4"><span class="card-label">jellyfish 4</span></div>
-<div class="card"><img src="../assets/display/planet-1.png" alt="planet 1"><span class="card-label">planet 1</span></div>
-<div class="card"><img src="../assets/display/planet-2.png" alt="planet 2"><span class="card-label">planet 2</span></div>
-<div class="card"><img src="../assets/display/ruin-archway-1.png" alt="ruin archway 1"><span class="card-label">ruin archway 1</span></div>
-<div class="card"><img src="../assets/display/ruin-archway-2.png" alt="ruin archway 2"><span class="card-label">ruin archway 2</span></div>
-<div class="card"><img src="../assets/display/save-beacon-0ef55698.png" alt="save beacon 0ef55698"><span class="card-label">save beacon 0ef55698</span></div>
-<div class="card"><img src="../assets/display/save-beacon-1fce41cc.png" alt="save beacon 1fce41cc"><span class="card-label">save beacon 1fce41cc</span></div>
-<div class="card"><img src="../assets/display/save-beacon-ed6e4804.png" alt="save beacon ed6e4804"><span class="card-label">save beacon ed6e4804</span></div>
-<div class="card"><img src="../assets/display/save-beacon-fab9fc15.png" alt="save beacon fab9fc15"><span class="card-label">save beacon fab9fc15</span></div>
-<div class="card"><img src="../assets/display/save-beacon-styled-67761ec4.png" alt="save beacon styled 67761ec4"><span class="card-label">save beacon styled 67761ec4</span></div>
-<div class="card"><img src="../assets/display/save-beacon-styled-e3d39ecb.png" alt="save beacon styled e3d39ecb"><span class="card-label">save beacon styled e3d39ecb</span></div>
-<div class="card"><img src="../assets/display/scrap-pile-548984a4.png" alt="scrap pile 548984a4"><span class="card-label">scrap pile 548984a4</span></div>
-<div class="card"><img src="../assets/display/scrap-pile-82610394.png" alt="scrap pile 82610394"><span class="card-label">scrap pile 82610394</span></div>
-<div class="card"><img src="../assets/display/scrap-pile-cfec9cf3.png" alt="scrap pile cfec9cf3"><span class="card-label">scrap pile cfec9cf3</span></div>
-<div class="card"><img src="../assets/display/scrap-pile-f17a7828.png" alt="scrap pile f17a7828"><span class="card-label">scrap pile f17a7828</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-1.png" alt="treasure chest 1"><span class="card-label">treasure chest 1</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-2.png" alt="treasure chest 2"><span class="card-label">treasure chest 2</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-3.png" alt="treasure chest 3"><span class="card-label">treasure chest 3</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-4.png" alt="treasure chest 4"><span class="card-label">treasure chest 4</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-5.png" alt="treasure chest 5"><span class="card-label">treasure chest 5</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-6.png" alt="treasure chest 6"><span class="card-label">treasure chest 6</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-7.png" alt="treasure chest 7"><span class="card-label">treasure chest 7</span></div></div></section>
+<section><h2>Object Animations (2)</h2><p class="section-note">campfire flicker, grass sway</p><div class="grid"><div class="card"><img src="../assets/gifs/campfire-flicker.gif"><span class="card-label">campfire flicker</span></div>
+<div class="card"><img src="../assets/gifs/grass-sway.gif"><span class="card-label">grass sway</span></div></div></section>
 
-<section><h2>Tilesets (7)</h2>
-<div class="grid grid-lg"><div class="card wide"><img src="../assets/display/tileset-alien-grass.png" alt="alien grass"><span class="card-label">alien grass</span></div>
-<div class="card wide"><img src="../assets/display/tileset-galaxy-map.png" alt="galaxy map"><span class="card-label">galaxy map</span></div>
-<div class="card wide"><img src="../assets/display/tileset-jrpg-dirt-to-grass.png" alt="jrpg dirt to grass"><span class="card-label">jrpg dirt to grass</span></div>
-<div class="card wide"><img src="../assets/display/tileset-jrpg-rock-walls.png" alt="jrpg rock walls"><span class="card-label">jrpg rock walls</span></div>
-<div class="card wide"><img src="../assets/display/tileset-red-wasteland.png" alt="red wasteland"><span class="card-label">red wasteland</span></div>
-<div class="card wide"><img src="../assets/display/tileset-station-interior.png" alt="station interior"><span class="card-label">station interior</span></div>
-<div class="card wide"><img src="../assets/display/tileset-void-cliff.png" alt="void cliff"><span class="card-label">void cliff</span></div></div></section>
+<section><h2>Other Character Animations (1)</h2><p class="section-note">walk cycles for all characters</p><div class="grid"><div class="card"><img src="../assets/gifs/green-alien-walk-south.gif"><span class="card-label">green alien walk south</span></div></div></section>
+
+<section><h2>Generated Characters (24)</h2><p class="section-note">green alien, crystal head, red hair — 8 directions each</p><div class="grid"><div class="card"><img src="../assets/display/crystal-head-east.png"><span class="card-label">crystal head east</span></div>
+<div class="card"><img src="../assets/display/crystal-head-north-east.png"><span class="card-label">crystal head north east</span></div>
+<div class="card"><img src="../assets/display/crystal-head-north-west.png"><span class="card-label">crystal head north west</span></div>
+<div class="card"><img src="../assets/display/crystal-head-north.png"><span class="card-label">crystal head north</span></div>
+<div class="card"><img src="../assets/display/crystal-head-south-east.png"><span class="card-label">crystal head south east</span></div>
+<div class="card"><img src="../assets/display/crystal-head-south-west.png"><span class="card-label">crystal head south west</span></div>
+<div class="card"><img src="../assets/display/crystal-head-south.png"><span class="card-label">crystal head south</span></div>
+<div class="card"><img src="../assets/display/crystal-head-west.png"><span class="card-label">crystal head west</span></div>
+<div class="card"><img src="../assets/display/green-alien-east.png"><span class="card-label">green alien east</span></div>
+<div class="card"><img src="../assets/display/green-alien-north-east.png"><span class="card-label">green alien north east</span></div>
+<div class="card"><img src="../assets/display/green-alien-north-west.png"><span class="card-label">green alien north west</span></div>
+<div class="card"><img src="../assets/display/green-alien-north.png"><span class="card-label">green alien north</span></div>
+<div class="card"><img src="../assets/display/green-alien-south-east.png"><span class="card-label">green alien south east</span></div>
+<div class="card"><img src="../assets/display/green-alien-south-west.png"><span class="card-label">green alien south west</span></div>
+<div class="card"><img src="../assets/display/green-alien-south.png"><span class="card-label">green alien south</span></div>
+<div class="card"><img src="../assets/display/green-alien-west.png"><span class="card-label">green alien west</span></div>
+<div class="card"><img src="../assets/display/red-hair-east.png"><span class="card-label">red hair east</span></div>
+<div class="card"><img src="../assets/display/red-hair-north-east.png"><span class="card-label">red hair north east</span></div>
+<div class="card"><img src="../assets/display/red-hair-north-west.png"><span class="card-label">red hair north west</span></div>
+<div class="card"><img src="../assets/display/red-hair-north.png"><span class="card-label">red hair north</span></div>
+<div class="card"><img src="../assets/display/red-hair-south-east.png"><span class="card-label">red hair south east</span></div>
+<div class="card"><img src="../assets/display/red-hair-south-west.png"><span class="card-label">red hair south west</span></div>
+<div class="card"><img src="../assets/display/red-hair-south.png"><span class="card-label">red hair south</span></div>
+<div class="card"><img src="../assets/display/red-hair-west.png"><span class="card-label">red hair west</span></div></div></section>
+
+<section><h2>Jellyfish (4)</h2><p class="section-note">ambient alien wildlife</p><div class="grid"><div class="card"><img src="../assets/display/jellyfish-1.png"><span class="card-label">jellyfish 1</span></div>
+<div class="card"><img src="../assets/display/jellyfish-2.png"><span class="card-label">jellyfish 2</span></div>
+<div class="card"><img src="../assets/display/jellyfish-3.png"><span class="card-label">jellyfish 3</span></div>
+<div class="card"><img src="../assets/display/jellyfish-4.png"><span class="card-label">jellyfish 4</span></div></div></section>
+
+<section><h2>Gem Collectibles (6)</h2><p class="section-note">hidden in the grass, like zelda rupees</p><div class="grid"><div class="card"><img src="../assets/display/gem-14f47ec5.png"><span class="card-label">gem 14f47ec5</span></div>
+<div class="card"><img src="../assets/display/gem-58cd46db.png"><span class="card-label">gem 58cd46db</span></div>
+<div class="card"><img src="../assets/display/gem-5c375d7f.png"><span class="card-label">gem 5c375d7f</span></div>
+<div class="card"><img src="../assets/display/gem-78ae93a5.png"><span class="card-label">gem 78ae93a5</span></div>
+<div class="card"><img src="../assets/display/gem-a117e5ce.png"><span class="card-label">gem a117e5ce</span></div>
+<div class="card"><img src="../assets/display/gem-be5a313d.png"><span class="card-label">gem be5a313d</span></div></div></section>
+
+<section><h2>Treasure Chests (13)</h2><p class="section-note">who packed these? optimistic.</p><div class="grid"><div class="card"><img src="../assets/display/chest-jrpg-4b2f359b.png"><span class="card-label">chest jrpg 4b2f359b</span></div>
+<div class="card"><img src="../assets/display/chest-jrpg-9b239a11.png"><span class="card-label">chest jrpg 9b239a11</span></div>
+<div class="card"><img src="../assets/display/chest-jrpg-b4fbf61d.png"><span class="card-label">chest jrpg b4fbf61d</span></div>
+<div class="card"><img src="../assets/display/chest-jrpg-c3f07e48.png"><span class="card-label">chest jrpg c3f07e48</span></div>
+<div class="card"><img src="../assets/display/chest-jrpg-cb51c94f.png"><span class="card-label">chest jrpg cb51c94f</span></div>
+<div class="card"><img src="../assets/display/chest-jrpg-f35209b7.png"><span class="card-label">chest jrpg f35209b7</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-1.png"><span class="card-label">treasure chest 1</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-2.png"><span class="card-label">treasure chest 2</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-3.png"><span class="card-label">treasure chest 3</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-4.png"><span class="card-label">treasure chest 4</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-5.png"><span class="card-label">treasure chest 5</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-6.png"><span class="card-label">treasure chest 6</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-7.png"><span class="card-label">treasure chest 7</span></div></div></section>
+
+<section><h2>Grass Patches (4)</h2><p class="section-note">pokemon-style encounter zones</p><div class="grid"><div class="card"><img src="../assets/display/grass-patch-0c68df48.png"><span class="card-label">grass patch 0c68df48</span></div>
+<div class="card"><img src="../assets/display/grass-patch-2d2ae621.png"><span class="card-label">grass patch 2d2ae621</span></div>
+<div class="card"><img src="../assets/display/grass-patch-76fce7a3.png"><span class="card-label">grass patch 76fce7a3</span></div>
+<div class="card"><img src="../assets/display/grass-patch-fad8d601.png"><span class="card-label">grass patch fad8d601</span></div></div></section>
+
+<section><h2>Crashed Ships (7)</h2><p class="section-note">doug's ride didn't make it</p><div class="grid"><div class="card"><img src="../assets/display/crashed-pod-jrpg-49fcd9e3.png"><span class="card-label">crashed pod jrpg 49fcd9e3</span></div>
+<div class="card"><img src="../assets/display/crashed-pod-jrpg-9c2ec2ec.png"><span class="card-label">crashed pod jrpg 9c2ec2ec</span></div>
+<div class="card"><img src="../assets/display/crashed-pod-jrpg-ab8180bb.png"><span class="card-label">crashed pod jrpg ab8180bb</span></div>
+<div class="card"><img src="../assets/display/crashed-pod-jrpg-e8311d34.png"><span class="card-label">crashed pod jrpg e8311d34</span></div>
+<div class="card"><img src="../assets/display/crashed-ship-1.png"><span class="card-label">crashed ship 1</span></div>
+<div class="card"><img src="../assets/display/crashed-ship-2.png"><span class="card-label">crashed ship 2</span></div>
+<div class="card"><img src="../assets/display/iso-crashed-hull.png"><span class="card-label">iso crashed hull</span></div></div></section>
+
+<section><h2>Save Beacons & Campfires (10)</h2><p class="section-note">warm pockets in the void</p><div class="grid"><div class="card"><img src="../assets/display/campfire-save-5859898a.png"><span class="card-label">campfire save 5859898a</span></div>
+<div class="card"><img src="../assets/display/campfire-save-b61d1f9c.png"><span class="card-label">campfire save b61d1f9c</span></div>
+<div class="card"><img src="../assets/display/campfire-save-dc9abfdb.png"><span class="card-label">campfire save dc9abfdb</span></div>
+<div class="card"><img src="../assets/display/iso-campfire.png"><span class="card-label">iso campfire</span></div>
+<div class="card"><img src="../assets/display/save-beacon-0ef55698.png"><span class="card-label">save beacon 0ef55698</span></div>
+<div class="card"><img src="../assets/display/save-beacon-1fce41cc.png"><span class="card-label">save beacon 1fce41cc</span></div>
+<div class="card"><img src="../assets/display/save-beacon-ed6e4804.png"><span class="card-label">save beacon ed6e4804</span></div>
+<div class="card"><img src="../assets/display/save-beacon-fab9fc15.png"><span class="card-label">save beacon fab9fc15</span></div>
+<div class="card"><img src="../assets/display/save-beacon-styled-67761ec4.png"><span class="card-label">save beacon styled 67761ec4</span></div>
+<div class="card"><img src="../assets/display/save-beacon-styled-e3d39ecb.png"><span class="card-label">save beacon styled e3d39ecb</span></div></div></section>
+
+<section><h2>Alien Trees & Stumps (4)</h2><p class="section-note">they grew here once</p><div class="grid"><div class="card"><img src="../assets/display/alien-tree-6.png"><span class="card-label">alien tree 6</span></div>
+<div class="card"><img src="../assets/display/alien-tree-7.png"><span class="card-label">alien tree 7</span></div>
+<div class="card"><img src="../assets/display/alien-tree-8.png"><span class="card-label">alien tree 8</span></div>
+<div class="card"><img src="../assets/display/alien-tree-9.png"><span class="card-label">alien tree 9</span></div></div></section>
+
+<section><h2>Signposts (5)</h2><p class="section-note">who were they directing?</p><div class="grid"><div class="card"><img src="../assets/display/signpost-72fc5e70.png"><span class="card-label">signpost 72fc5e70</span></div>
+<div class="card"><img src="../assets/display/signpost-8da3ab43.png"><span class="card-label">signpost 8da3ab43</span></div>
+<div class="card"><img src="../assets/display/signpost-93981b22.png"><span class="card-label">signpost 93981b22</span></div>
+<div class="card"><img src="../assets/display/signpost-f507769f.png"><span class="card-label">signpost f507769f</span></div>
+<div class="card"><img src="../assets/display/signpost-ffe8917b.png"><span class="card-label">signpost ffe8917b</span></div></div></section>
+
+<section><h2>Alien Flowers (4)</h2><p class="section-note">still glowing, somehow</p><div class="grid"><div class="card"><img src="../assets/display/alien-flower-8c92b2f9.png"><span class="card-label">alien flower 8c92b2f9</span></div>
+<div class="card"><img src="../assets/display/alien-flower-ab94653c.png"><span class="card-label">alien flower ab94653c</span></div>
+<div class="card"><img src="../assets/display/alien-flower-cfc6db60.png"><span class="card-label">alien flower cfc6db60</span></div>
+<div class="card"><img src="../assets/display/alien-flower-e895548d.png"><span class="card-label">alien flower e895548d</span></div></div></section>
+
+<section><h2>Rock Boulders (4)</h2><p class="section-note">impassable terrain</p><div class="grid"><div class="card"><img src="../assets/display/rock-boulder-82324aa8.png"><span class="card-label">rock boulder 82324aa8</span></div>
+<div class="card"><img src="../assets/display/rock-boulder-b46ce033.png"><span class="card-label">rock boulder b46ce033</span></div>
+<div class="card"><img src="../assets/display/rock-boulder-ce11da9c.png"><span class="card-label">rock boulder ce11da9c</span></div>
+<div class="card"><img src="../assets/display/rock-boulder-f29b5f18.png"><span class="card-label">rock boulder f29b5f18</span></div></div></section>
+
+<section><h2>Data Terminals (12)</h2><p class="section-note">dead screens. mostly.</p><div class="grid"><div class="card"><img src="../assets/display/data-terminal-1.png"><span class="card-label">data terminal 1</span></div>
+<div class="card"><img src="../assets/display/data-terminal-2.png"><span class="card-label">data terminal 2</span></div>
+<div class="card"><img src="../assets/display/data-terminal-3.png"><span class="card-label">data terminal 3</span></div>
+<div class="card"><img src="../assets/display/data-terminal-4.png"><span class="card-label">data terminal 4</span></div>
+<div class="card"><img src="../assets/display/data-terminal-5.png"><span class="card-label">data terminal 5</span></div>
+<div class="card"><img src="../assets/display/data-terminal-styled-2d2ae61c.png"><span class="card-label">data terminal styled 2d2ae61c</span></div>
+<div class="card"><img src="../assets/display/data-terminal-styled-9cb9811b.png"><span class="card-label">data terminal styled 9cb9811b</span></div>
+<div class="card"><img src="../assets/display/data-terminal-styled-de48d693.png"><span class="card-label">data terminal styled de48d693</span></div>
+<div class="card"><img src="../assets/display/terminal-jrpg-2f7a17fb.png"><span class="card-label">terminal jrpg 2f7a17fb</span></div>
+<div class="card"><img src="../assets/display/terminal-jrpg-6ae327fe.png"><span class="card-label">terminal jrpg 6ae327fe</span></div>
+<div class="card"><img src="../assets/display/terminal-jrpg-7c3ac53d.png"><span class="card-label">terminal jrpg 7c3ac53d</span></div>
+<div class="card"><img src="../assets/display/terminal-jrpg-ceb87ffd.png"><span class="card-label">terminal jrpg ceb87ffd</span></div></div></section>
+
+<section><h2>Bones & Skeletons (12)</h2><p class="section-note">they didn't make it either</p><div class="grid"><div class="card"><img src="../assets/display/alien-bones-90094465.png"><span class="card-label">alien bones 90094465</span></div>
+<div class="card"><img src="../assets/display/alien-bones-9659ad95.png"><span class="card-label">alien bones 9659ad95</span></div>
+<div class="card"><img src="../assets/display/alien-bones-a19a4eed.png"><span class="card-label">alien bones a19a4eed</span></div>
+<div class="card"><img src="../assets/display/alien-bones-ca18a7d9.png"><span class="card-label">alien bones ca18a7d9</span></div>
+<div class="card"><img src="../assets/display/animal-skeleton-6a05637a.png"><span class="card-label">animal skeleton 6a05637a</span></div>
+<div class="card"><img src="../assets/display/animal-skeleton-7068ce02.png"><span class="card-label">animal skeleton 7068ce02</span></div>
+<div class="card"><img src="../assets/display/animal-skeleton-a90fef98.png"><span class="card-label">animal skeleton a90fef98</span></div>
+<div class="card"><img src="../assets/display/animal-skeleton-a9bad39c.png"><span class="card-label">animal skeleton a9bad39c</span></div>
+<div class="card"><img src="../assets/display/broken-statue-1a68037a.png"><span class="card-label">broken statue 1a68037a</span></div>
+<div class="card"><img src="../assets/display/broken-statue-a72f28b1.png"><span class="card-label">broken statue a72f28b1</span></div>
+<div class="card"><img src="../assets/display/broken-statue-c41c46fc.png"><span class="card-label">broken statue c41c46fc</span></div>
+<div class="card"><img src="../assets/display/broken-statue-e2264dfa.png"><span class="card-label">broken statue e2264dfa</span></div></div></section>
+
+<section><h2>Archways & Gates (6)</h2><p class="section-note">entrances to somewhere</p><div class="grid"><div class="card"><img src="../assets/display/archway-jrpg-0d2d616e.png"><span class="card-label">archway jrpg 0d2d616e</span></div>
+<div class="card"><img src="../assets/display/archway-jrpg-2135b964.png"><span class="card-label">archway jrpg 2135b964</span></div>
+<div class="card"><img src="../assets/display/archway-jrpg-4ca65be6.png"><span class="card-label">archway jrpg 4ca65be6</span></div>
+<div class="card"><img src="../assets/display/archway-jrpg-f991703e.png"><span class="card-label">archway jrpg f991703e</span></div>
+<div class="card"><img src="../assets/display/ruin-archway-1.png"><span class="card-label">ruin archway 1</span></div>
+<div class="card"><img src="../assets/display/ruin-archway-2.png"><span class="card-label">ruin archway 2</span></div></div></section>
+
+<section><h2>Planets & Space (9)</h2><p class="section-note">the view from here</p><div class="grid"><div class="card"><img src="../assets/display/planet-1.png"><span class="card-label">planet 1</span></div>
+<div class="card"><img src="../assets/display/planet-2.png"><span class="card-label">planet 2</span></div>
+<div class="card"><img src="../assets/display/cyan-pod-10.png"><span class="card-label">cyan pod 10</span></div>
+<div class="card"><img src="../assets/display/cyan-pod-11.png"><span class="card-label">cyan pod 11</span></div>
+<div class="card"><img src="../assets/display/cyan-pod-12.png"><span class="card-label">cyan pod 12</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-548984a4.png"><span class="card-label">scrap pile 548984a4</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-82610394.png"><span class="card-label">scrap pile 82610394</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-cfec9cf3.png"><span class="card-label">scrap pile cfec9cf3</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-f17a7828.png"><span class="card-label">scrap pile f17a7828</span></div></div></section>
+
+<section><h2>Tilesets (12)</h2><p class="section-note">wang tilesets for godot — hover to zoom 3x</p><div class="grid grid-lg"><div class="card wide tileset-zoom"><img src="../assets/display/tileset-alien-grass.png"><span class="card-label">alien grass (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-galaxy-map.png"><span class="card-label">galaxy map (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-arcade-room.png"><span class="card-label">jrpg arcade room (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-crash-debris.png"><span class="card-label">jrpg crash debris (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-dirt-to-grass.png"><span class="card-label">jrpg dirt to grass (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-rock-walls.png"><span class="card-label">jrpg rock walls (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-stone-path.png"><span class="card-label">jrpg stone path (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-treasure-vault.png"><span class="card-label">jrpg treasure vault (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-jrpg-water-pools.png"><span class="card-label">jrpg water pools (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-red-wasteland.png"><span class="card-label">red wasteland (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-station-interior.png"><span class="card-label">station interior (hover to zoom)</span></div><div class="card wide tileset-zoom"><img src="../assets/display/tileset-void-cliff.png"><span class="card-label">void cliff (hover to zoom)</span></div></div></section>
+
+<section><h2>Other Assets (12)</h2><div class="grid"><div class="card"><img src="../assets/display/antenna-tower.png"><span class="card-label">antenna tower</span></div>
+<div class="card"><img src="../assets/display/collectible-1.png"><span class="card-label">collectible 1</span></div>
+<div class="card"><img src="../assets/display/collectible-2.png"><span class="card-label">collectible 2</span></div>
+<div class="card"><img src="../assets/display/collectible-3.png"><span class="card-label">collectible 3</span></div>
+<div class="card"><img src="../assets/display/collectible-4.png"><span class="card-label">collectible 4</span></div>
+<div class="card"><img src="../assets/display/collectible-5.png"><span class="card-label">collectible 5</span></div>
+<div class="card"><img src="../assets/display/collectible-6.png"><span class="card-label">collectible 6</span></div>
+<div class="card"><img src="../assets/display/collectible-7.png"><span class="card-label">collectible 7</span></div>
+<div class="card"><img src="../assets/display/iso-crystal-cluster.png"><span class="card-label">iso crystal cluster</span></div>
+<div class="card"><img src="../assets/display/iso-dougs-shelter.png"><span class="card-label">iso dougs shelter</span></div>
+<div class="card"><img src="../assets/display/original-arcade-room.png"><span class="card-label">original arcade room</span></div>
+<div class="card"><img src="../assets/display/original-treasure-room.png"><span class="card-label">original treasure room</span></div></div></section>
 
 <p class="quote">"He stares into the abyss, and with the abyss staring back, he smiles."</p>
 <footer>mute. &mdash; a game about staying bright</footer>
