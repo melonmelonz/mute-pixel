@@ -8,21 +8,21 @@ body{background:#000;color:#e8e0d0;font-family:'Space Mono',monospace;min-height
 .star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--dur) ease-in-out infinite alternate}
 @keyframes twinkle{0%{opacity:var(--lo)}100%{opacity:var(--hi)}}
 .wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:3rem 1.5rem 5rem}
-header{text-align:center;margin-bottom:3rem}
-h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;letter-spacing:0.2em;color:#d4a437;text-shadow:0 0 30px rgba(212,164,55,0.5),0 0 80px rgba(212,164,55,0.15)}
+header{text-align:center;margin-bottom:2rem}
+h1{font-size:clamp(2.5rem,7vw,5rem);font-weight:700;letter-spacing:0.25em;color:#d4a437;text-shadow:0 0 40px rgba(212,164,55,0.5),0 0 100px rgba(212,164,55,0.15)}
 .subtitle{font-size:clamp(0.7rem,2vw,0.9rem);color:#5a5040;letter-spacing:0.3em;margin-top:0.5rem}
 .divider{width:120px;height:1px;margin:1.5rem auto;background:linear-gradient(90deg,transparent,#d4a437,transparent)}
 h2{font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:#6a6050;text-align:center;margin:2.5rem 0 0.8rem}
 .section-note{text-align:center;font-size:0.5rem;color:#5a4a3a;margin-bottom:0.6rem;letter-spacing:0.1em}
-.stats{text-align:center;font-size:0.6rem;color:#4a4a3a;margin:1rem 0 2rem;letter-spacing:0.15em}
+.stats{text-align:center;font-size:0.55rem;color:#4a4a3a;margin:1rem 0 2rem;letter-spacing:0.12em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:0.4rem;margin-bottom:1.5rem}
 .grid-lg{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-.grid-showcase{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.grid-showcase{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 .card{background:rgba(255,255,255,0.02);border:1px solid rgba(0,220,255,0.06);border-radius:6px;padding:0.4rem;display:flex;flex-direction:column;align-items:center;gap:0.2rem;transition:all 0.3s;cursor:zoom-in}
 .card:hover{border-color:rgba(0,220,255,0.3);box-shadow:0 0 12px rgba(0,220,255,0.08);transform:translateY(-2px)}
-.card.wide{grid-column:span 2}.card.showcase{border-color:rgba(212,164,55,0.15);grid-column:span 2}
+.card.wide{grid-column:span 2}.card.showcase{border-color:rgba(212,164,55,0.15);background:rgba(212,164,55,0.02)}
 .card.showcase:hover{border-color:rgba(212,164,55,0.4);box-shadow:0 0 20px rgba(212,164,55,0.12)}
-.card img{image-rendering:pixelated;max-width:100%;max-height:180px;object-fit:contain}
+.card img{image-rendering:pixelated;max-width:100%;max-height:200px;object-fit:contain}
 .card-label{font-size:0.4rem;letter-spacing:0.08em;color:#4a5a5a;text-transform:lowercase;text-align:center}
 .compass{position:relative;width:280px;height:280px;margin:0 auto 2rem;border:1px solid rgba(255,160,40,0.1);border-radius:50%;box-shadow:0 0 30px rgba(255,160,40,0.05)}
 .compass-sprite{position:absolute;image-rendering:pixelated;width:48px;height:48px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px rgba(212,164,55,0.3))}
@@ -32,39 +32,52 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 #lightbox.active{display:flex}
 #lightbox img{image-rendering:pixelated;max-width:90vw;max-height:90vh;object-fit:contain;filter:drop-shadow(0 0 30px rgba(212,164,55,0.3))}
 .palette{display:flex;gap:4px;justify-content:center;margin:1rem 0;flex-wrap:wrap}
-.swatch{width:24px;height:24px;border-radius:3px;border:1px solid rgba(255,255,255,0.1)}
+.swatch{width:28px;height:28px;border-radius:4px;border:1px solid rgba(255,255,255,0.15)}
 </style></head>
 <body>
 <div id="lightbox" onclick="this.classList.remove('active')"><img id="lb-img"></div>
 <div class="starfield" id="sf"></div>
 <div class="wrap">
 <header><h1>mute.</h1><p class="subtitle">he is alone with his thoughts</p><div class="divider"></div></header>
-<p class="stats">196 assets · 31 animations · 12 tilesets · 4 playable characters</p>
+<p class="stats">202 assets &middot; 31 animations &middot; 12 tilesets &middot; 6 environments &middot; 4 skeleton-rigged characters</p>
 
-<section><h2>Game Palette (11 colors)</h2>
-<p class="section-note">extracted from original Doug sprite — all assets must use this</p>
+<section><h2>Game Palette</h2>
+<p class="section-note">11 colors from original Doug sprite</p>
 <div class="palette">
-<div class="swatch" style="background:#000000" title="#000000"></div>
-<div class="swatch" style="background:#00cdf9" title="#00cdf9"></div>
-<div class="swatch" style="background:#0cf1ff" title="#0cf1ff"></div>
-<div class="swatch" style="background:#94fdff" title="#94fdff"></div>
-<div class="swatch" style="background:#92a1b9" title="#92a1b9"></div>
-<div class="swatch" style="background:#c7cfdd" title="#c7cfdd"></div>
-<div class="swatch" style="background:#bf6f4a" title="#bf6f4a"></div>
-<div class="swatch" style="background:#c64524" title="#c64524"></div>
-<div class="swatch" style="background:#e07438" title="#e07438"></div>
-<div class="swatch" style="background:#e69c69" title="#e69c69"></div>
-<div class="swatch" style="background:#f6ca9f" title="#f6ca9f"></div>
+<div class="swatch" style="background:#000" title="#000000"></div>
+<div class="swatch" style="background:#00cdf9" title="visor cyan"></div>
+<div class="swatch" style="background:#0cf1ff" title="visor highlight"></div>
+<div class="swatch" style="background:#94fdff" title="visor bright"></div>
+<div class="swatch" style="background:#92a1b9" title="helmet grey"></div>
+<div class="swatch" style="background:#c7cfdd" title="helmet light"></div>
+<div class="swatch" style="background:#bf6f4a" title="suit brown"></div>
+<div class="swatch" style="background:#c64524" title="suit red"></div>
+<div class="swatch" style="background:#e07438" title="suit orange"></div>
+<div class="swatch" style="background:#e69c69" title="skin warm"></div>
+<div class="swatch" style="background:#f6ca9f" title="skin highlight"></div>
 </div></section>
 
-<section><h2>Original Art — Main Cast</h2><p class="section-note">hand-drawn pixel art</p><div class="grid grid-showcase"><div class="card" onclick="zoom(this)"><img src="./assets/display/crystal-head-concept.png"><span class="card-label">crystal head concept</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/doug-concept.png"><span class="card-label">doug concept</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/green-alien-concept.png"><span class="card-label">green alien concept</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-concept.png"><span class="card-label">red hair concept</span></div></div></section>
+<section><h2>Skeleton-Rigged Characters (NEW)</h2>
+<p class="section-note">proper create_character tool — 49+ template animations each</p>
+<div class="grid grid-showcase"></div></section>
+
+<section><h2>Generated Environments (NEW)</h2>
+<p class="section-note">full scene compositions — campfire, crash site, ruins, outpost, oasis, arcade</p>
+<div class="grid grid-showcase"><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/env-abandoned-outpost.png"><span class="card-label">abandoned outpost</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/env-alien-oasis.png"><span class="card-label">alien oasis</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/env-alien-ruins-entrance.png"><span class="card-label">alien ruins entrance</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/env-arcade-room-gen.png"><span class="card-label">arcade room gen</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/env-campfire-rest-area.png"><span class="card-label">campfire rest area</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/env-crashed-ship-scene.png"><span class="card-label">crashed ship scene</span></div></div></section>
+
+<section><h2>Original Art — Main Cast</h2><p class="section-note">hand-drawn pixel art</p><div class="grid grid-showcase"><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/crystal-head-concept.png"><span class="card-label">crystal head concept</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/doug-concept.png"><span class="card-label">doug concept</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/green-alien-concept.png"><span class="card-label">green alien concept</span></div>
+<div class="card showcase" onclick="zoom(this)"><img src="./assets/display/red-hair-concept.png"><span class="card-label">red hair concept</span></div></div></section>
 <section><h2>Original Environments</h2><p class="section-note">arcade room & treasure room</p><div class="grid grid-showcase"><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/showcase-arcade-room.png"><span class="card-label">arcade room</span></div>
 <div class="card showcase" onclick="zoom(this)"><img src="./assets/display/showcase-main-cast.png"><span class="card-label">main cast</span></div>
 <div class="card showcase" onclick="zoom(this)"><img src="./assets/display/showcase-treasure-room.png"><span class="card-label">treasure room</span></div></div></section>
-<section><h2>Original Doug Animations (7)</h2><p class="section-note">proper walk cycles from sprite sheet</p><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/gifs/original-arcade-room-anim.gif"><span class="card-label">original arcade room anim</span></div>
+<section><h2>Original Doug Walks (7)</h2><p class="section-note">from sprite sheet</p><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/gifs/original-arcade-room-anim.gif"><span class="card-label">original arcade room anim</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/original-chest-anim.gif"><span class="card-label">original chest anim</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/original-doug-idle.gif"><span class="card-label">original doug idle</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/original-doug-walk-east.gif"><span class="card-label">original doug walk east</span></div>
@@ -80,11 +93,11 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <img class="compass-sprite" src="./assets/space-traveler/rotations/west.png" style="left:40px;top:140px">
 <img class="compass-sprite" src="./assets/space-traveler/rotations/south-west.png" style="left:69px;top:211px">
 </div></section>
-<section><h2>Generated Animations (24)</h2><p class="section-note">all characters · all actions</p><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/gifs/campfire-flicker.gif"><span class="card-label">campfire flicker</span></div>
+<section><h2>Generated Animations (24)</h2><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/gifs/campfire-flicker.gif"><span class="card-label">campfire flicker</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-east.gif"><span class="card-label">crystal head walk east</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-north-east.gif"><span class="card-label">crystal head walk north e</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-south-east.gif"><span class="card-label">crystal head walk south e</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-south-west.gif"><span class="card-label">crystal head walk south w</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-north-east.gif"><span class="card-label">crystal head walk north east</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-south-east.gif"><span class="card-label">crystal head walk south east</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-south-west.gif"><span class="card-label">crystal head walk south west</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/crystal-head-walk-south.gif"><span class="card-label">crystal head walk south</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/death-east.gif"><span class="card-label">death east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/death-north-east.gif"><span class="card-label">death north east</span></div>
@@ -104,7 +117,7 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/zero-g-float-south-west.gif"><span class="card-label">zero g float south west</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/zero-g-float-south.gif"><span class="card-label">zero g float south</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/gifs/zero-g-float-west.gif"><span class="card-label">zero g float west</span></div></div></section>
-<section><h2>Characters V2 (NEW) (24)</h2><p class="section-note">regenerated with Doug's sprite as reference</p><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/display/crab-head-v2-east.png"><span class="card-label">crab head v2 east</span></div>
+<section><h2>Characters V2 (Object-based) (24)</h2><p class="section-note">previous generation</p><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/display/crab-head-v2-east.png"><span class="card-label">crab head v2 east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/crab-head-v2-north-east.png"><span class="card-label">crab head v2 north east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/crab-head-v2-north-west.png"><span class="card-label">crab head v2 north west</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/crab-head-v2-north.png"><span class="card-label">crab head v2 north</span></div>
@@ -245,7 +258,15 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card" onclick="zoom(this)"><img src="./assets/display/bench-1c6f426a.png"><span class="card-label">bench 1c6f426a</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/bench-591ae8ca.png"><span class="card-label">bench 591ae8ca</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/bench-fd3290d1.png"><span class="card-label">bench fd3290d1</span></div></div></section>
-<section><h2>Characters (Old Gen) (24)</h2><p class="section-note">first generation</p><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/display/crystal-head-east.png"><span class="card-label">crystal head east</span></div>
+<section><h2>Other (36)</h2><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/display/antenna-tower.png"><span class="card-label">antenna tower</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-1.png"><span class="card-label">collectible 1</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-2.png"><span class="card-label">collectible 2</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-3.png"><span class="card-label">collectible 3</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-4.png"><span class="card-label">collectible 4</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-5.png"><span class="card-label">collectible 5</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-6.png"><span class="card-label">collectible 6</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-7.png"><span class="card-label">collectible 7</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/crystal-head-east.png"><span class="card-label">crystal head east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/crystal-head-north-east.png"><span class="card-label">crystal head north east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/crystal-head-north-west.png"><span class="card-label">crystal head north west</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/crystal-head-north.png"><span class="card-label">crystal head north</span></div>
@@ -261,6 +282,10 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card" onclick="zoom(this)"><img src="./assets/display/green-alien-south-west.png"><span class="card-label">green alien south west</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/green-alien-south.png"><span class="card-label">green alien south</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/green-alien-west.png"><span class="card-label">green alien west</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/iso-crystal-cluster.png"><span class="card-label">iso crystal cluster</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/iso-dougs-shelter.png"><span class="card-label">iso dougs shelter</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/original-arcade-room.png"><span class="card-label">original arcade room</span></div>
+<div class="card" onclick="zoom(this)"><img src="./assets/display/original-treasure-room.png"><span class="card-label">original treasure room</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-east.png"><span class="card-label">red hair east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-north-east.png"><span class="card-label">red hair north east</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-north-west.png"><span class="card-label">red hair north west</span></div>
@@ -269,34 +294,11 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-south-west.png"><span class="card-label">red hair south west</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-south.png"><span class="card-label">red hair south</span></div>
 <div class="card" onclick="zoom(this)"><img src="./assets/display/red-hair-west.png"><span class="card-label">red hair west</span></div></div></section>
-<section><h2>Other (12)</h2><div class="grid"><div class="card" onclick="zoom(this)"><img src="./assets/display/antenna-tower.png"><span class="card-label">antenna tower</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-1.png"><span class="card-label">collectible 1</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-2.png"><span class="card-label">collectible 2</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-3.png"><span class="card-label">collectible 3</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-4.png"><span class="card-label">collectible 4</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-5.png"><span class="card-label">collectible 5</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-6.png"><span class="card-label">collectible 6</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/collectible-7.png"><span class="card-label">collectible 7</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/iso-crystal-cluster.png"><span class="card-label">iso crystal cluster</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/iso-dougs-shelter.png"><span class="card-label">iso dougs shelter</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/original-arcade-room.png"><span class="card-label">original arcade room</span></div>
-<div class="card" onclick="zoom(this)"><img src="./assets/display/original-treasure-room.png"><span class="card-label">original treasure room</span></div></div></section>
 
-<section><h2>Tilesets (12)</h2><p class="section-note">click to zoom · game-ready wang tilesets</p><div class="grid grid-lg"><div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-alien-grass.png"><span class="card-label">alien grass (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-galaxy-map.png"><span class="card-label">galaxy map (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-arcade-room.png"><span class="card-label">jrpg arcade room (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-crash-debris.png"><span class="card-label">jrpg crash debris (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-dirt-to-grass.png"><span class="card-label">jrpg dirt to grass (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-rock-walls.png"><span class="card-label">jrpg rock walls (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-stone-path.png"><span class="card-label">jrpg stone path (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-treasure-vault.png"><span class="card-label">jrpg treasure vault (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-water-pools.png"><span class="card-label">jrpg water pools (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-red-wasteland.png"><span class="card-label">red wasteland (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-station-interior.png"><span class="card-label">station interior (click to zoom)</span></div>
-<div class="card wide" onclick="zoom(this)"><img src="./assets/display/tileset-void-cliff.png"><span class="card-label">void cliff (click to zoom)</span></div></div></section>
+<section><h2>Tilesets (12)</h2><p class="section-note">click to zoom</p><div class="grid grid-lg"><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-alien-grass.png"><span class="card-label">alien grass</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-galaxy-map.png"><span class="card-label">galaxy map</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-arcade-room.png"><span class="card-label">jrpg arcade room</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-crash-debris.png"><span class="card-label">jrpg crash debris</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-dirt-to-grass.png"><span class="card-label">jrpg dirt to grass</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-rock-walls.png"><span class="card-label">jrpg rock walls</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-stone-path.png"><span class="card-label">jrpg stone path</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-treasure-vault.png"><span class="card-label">jrpg treasure vault</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-jrpg-water-pools.png"><span class="card-label">jrpg water pools</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-red-wasteland.png"><span class="card-label">red wasteland</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-station-interior.png"><span class="card-label">station interior</span></div><div class="card showcase" onclick="zoom(this)"><img src="./assets/display/tileset-void-cliff.png"><span class="card-label">void cliff</span></div></div></section>
 
 <p class="quote">"He stares into the abyss, and with the abyss staring back, he smiles."</p>
-<footer>mute. — a game about staying bright</footer>
+<footer>mute. &mdash; a game about staying bright</footer>
 </div>
 <script>
 !function(){var s=document.getElementById('sf');for(var i=0;i<200;i++){var d=document.createElement('div');d.className='star';var z=Math.random()<.1?2:1;d.style.cssText='width:'+z+'px;height:'+z+'px;left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;--lo:'+(Math.random()*.1).toFixed(2)+';--hi:'+(0.3+Math.random()*.6).toFixed(2)+';--dur:'+(2+Math.random()*6).toFixed(1)+'s;animation-delay:'+(Math.random()*6).toFixed(1)+'s';s.appendChild(d)}}();
