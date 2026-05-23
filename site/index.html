@@ -1,46 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mute.</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#000;color:#e8e0d0;font-family:'Space Mono',monospace;min-height:100vh;overflow-x:hidden;image-rendering:pixelated}
-.starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
-.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--dur) ease-in-out infinite alternate}
-@keyframes twinkle{0%{opacity:var(--lo)}100%{opacity:var(--hi)}}
-.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:3rem 1.5rem 5rem}
-header{text-align:center;margin-bottom:3rem}
-h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;letter-spacing:0.2em;color:#d4a437;text-shadow:0 0 30px rgba(212,164,55,0.5),0 0 80px rgba(212,164,55,0.15);margin-bottom:0.5rem}
-.subtitle{font-size:clamp(0.7rem,2vw,0.9rem);color:#5a5040;letter-spacing:0.3em;text-transform:lowercase}
-.divider{width:120px;height:1px;margin:1.5rem auto;background:linear-gradient(90deg,transparent,#d4a437,transparent)}
-h2{font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:#6a6050;text-align:center;margin:2.5rem 0 1.5rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.75rem;margin-bottom:2rem}
-.card{background:rgba(255,255,255,0.02);border:1px solid rgba(0,220,255,0.08);border-radius:6px;padding:0.75rem 0.5rem;display:flex;flex-direction:column;align-items:center;gap:0.4rem;transition:all 0.3s}
-.card:hover{border-color:rgba(0,220,255,0.3);box-shadow:0 0 15px rgba(0,220,255,0.1)}
-.card.wide{grid-column:span 2}
-.card img{image-rendering:pixelated;max-width:100%;max-height:160px;object-fit:contain}
-.card-label{font-size:0.55rem;letter-spacing:0.12em;color:#4a5a5a;text-transform:lowercase;text-align:center}
-.compass{position:relative;width:280px;height:280px;margin:0 auto 2rem;border:1px solid rgba(255,160,40,0.1);border-radius:50%;box-shadow:0 0 30px rgba(255,160,40,0.05)}
-.compass-sprite{position:absolute;image-rendering:pixelated;width:48px;height:48px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px rgba(212,164,55,0.3))}
-.quote{text-align:center;font-size:0.75rem;color:#3a3530;letter-spacing:0.15em;font-style:italic;margin:3rem 0 1rem;line-height:1.8}
-footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-spacing:0.3em}
-</style>
-</head>
-<body>
-<div class="starfield" id="sf"></div>
-<div class="wrap">
-<header>
-<h1>mute.</h1>
-<p class="subtitle">he is alone with his thoughts</p>
-<div class="divider"></div>
-</header>
-
-<section>
-<h2>Doug</h2>
-<div class="compass"><img class="compass-sprite" src="../assets/space-traveler/rotations/south.png" style="left:140px;top:240px" alt="south">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>mute.</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:#000;color:#e8e0d0;font-family:'Space Mono',monospace;min-height:100vh;overflow-x:hidden;image-rendering:pixelated}.starfield{position:fixed;inset:0;z-index:0;pointer-events:none}.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--dur) ease-in-out infinite alternate}@keyframes twinkle{0%{opacity:var(--lo)}100%{opacity:var(--hi)}}.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:3rem 1.5rem 5rem}header{text-align:center;margin-bottom:3rem}h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;letter-spacing:0.2em;color:#d4a437;text-shadow:0 0 30px rgba(212,164,55,0.5),0 0 80px rgba(212,164,55,0.15);margin-bottom:0.5rem}.subtitle{font-size:clamp(0.7rem,2vw,0.9rem);color:#5a5040;letter-spacing:0.3em}.divider{width:120px;height:1px;margin:1.5rem auto;background:linear-gradient(90deg,transparent,#d4a437,transparent)}h2{font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:#6a6050;text-align:center;margin:2.5rem 0 1.5rem}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:0.6rem;margin-bottom:2rem}.card{background:rgba(255,255,255,0.02);border:1px solid rgba(0,220,255,0.08);border-radius:6px;padding:0.6rem 0.4rem;display:flex;flex-direction:column;align-items:center;gap:0.3rem;transition:all 0.3s}.card:hover{border-color:rgba(0,220,255,0.3);box-shadow:0 0 15px rgba(0,220,255,0.1)}.card.wide{grid-column:span 2}.card img{image-rendering:pixelated;max-width:100%;max-height:140px;object-fit:contain}.card-label{font-size:0.5rem;letter-spacing:0.1em;color:#4a5a5a;text-transform:lowercase;text-align:center}.compass{position:relative;width:280px;height:280px;margin:0 auto 2rem;border:1px solid rgba(255,160,40,0.1);border-radius:50%;box-shadow:0 0 30px rgba(255,160,40,0.05)}.compass-sprite{position:absolute;image-rendering:pixelated;width:48px;height:48px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px rgba(212,164,55,0.3))}.quote{text-align:center;font-size:0.75rem;color:#3a3530;letter-spacing:0.15em;font-style:italic;margin:3rem 0 1rem;line-height:1.8}footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-spacing:0.3em}</style></head>
+<body><div class="starfield" id="sf"></div><div class="wrap">
+<header><h1>mute.</h1><p class="subtitle">he is alone with his thoughts</p><div class="divider"></div></header>
+<section><h2>Doug</h2><div class="compass"><img class="compass-sprite" src="../assets/space-traveler/rotations/south.png" style="left:140px;top:240px" alt="south">
 <img class="compass-sprite" src="../assets/space-traveler/rotations/south-east.png" style="left:211px;top:211px" alt="south-east">
 <img class="compass-sprite" src="../assets/space-traveler/rotations/east.png" style="left:240px;top:140px" alt="east">
 <img class="compass-sprite" src="../assets/space-traveler/rotations/north-east.png" style="left:211px;top:69px" alt="north-east">
@@ -48,12 +11,8 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <img class="compass-sprite" src="../assets/space-traveler/rotations/north-west.png" style="left:69px;top:69px" alt="north-west">
 <img class="compass-sprite" src="../assets/space-traveler/rotations/west.png" style="left:40px;top:140px" alt="west">
 <img class="compass-sprite" src="../assets/space-traveler/rotations/south-west.png" style="left:69px;top:211px" alt="south-west">
-</div>
-</section>
-
-<section>
-<h2>Animations</h2>
-<div class="grid"><div class="card"><img src="../assets/gifs/death-east.gif" alt="death east"><span class="card-label">death east</span></div>
+</div></section>
+<section><h2>Animations</h2><div class="grid"><div class="card"><img src="../assets/gifs/death-east.gif" alt="death east"><span class="card-label">death east</span></div>
 <div class="card"><img src="../assets/gifs/death-north-east.gif" alt="death north east"><span class="card-label">death north east</span></div>
 <div class="card"><img src="../assets/gifs/death-north-west.gif" alt="death north west"><span class="card-label">death north west</span></div>
 <div class="card"><img src="../assets/gifs/death-north.gif" alt="death north"><span class="card-label">death north</span></div>
@@ -67,13 +26,12 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card"><img src="../assets/gifs/zero-g-float-south-east.gif" alt="zero g float south east"><span class="card-label">zero g float south east</span></div>
 <div class="card"><img src="../assets/gifs/zero-g-float-south-west.gif" alt="zero g float south west"><span class="card-label">zero g float south west</span></div>
 <div class="card"><img src="../assets/gifs/zero-g-float-south.gif" alt="zero g float south"><span class="card-label">zero g float south</span></div>
-<div class="card"><img src="../assets/gifs/zero-g-float-west.gif" alt="zero g float west"><span class="card-label">zero g float west</span></div>
-</div>
-</section>
-
-<section>
-<h2>World Objects</h2>
-<div class="grid"><div class="card"><img src="../assets/display/alien-tree-6.png" alt="alien tree 6"><span class="card-label">alien tree 6</span></div>
+<div class="card"><img src="../assets/gifs/zero-g-float-west.gif" alt="zero g float west"><span class="card-label">zero g float west</span></div></div></section>
+<section><h2>World Objects (58)</h2><div class="grid"><div class="card"><img src="../assets/display/alien-bones-90094465.png" alt="alien bones 90094465"><span class="card-label">alien bones 90094465</span></div>
+<div class="card"><img src="../assets/display/alien-bones-9659ad95.png" alt="alien bones 9659ad95"><span class="card-label">alien bones 9659ad95</span></div>
+<div class="card"><img src="../assets/display/alien-bones-a19a4eed.png" alt="alien bones a19a4eed"><span class="card-label">alien bones a19a4eed</span></div>
+<div class="card"><img src="../assets/display/alien-bones-ca18a7d9.png" alt="alien bones ca18a7d9"><span class="card-label">alien bones ca18a7d9</span></div>
+<div class="card"><img src="../assets/display/alien-tree-6.png" alt="alien tree 6"><span class="card-label">alien tree 6</span></div>
 <div class="card"><img src="../assets/display/alien-tree-7.png" alt="alien tree 7"><span class="card-label">alien tree 7</span></div>
 <div class="card"><img src="../assets/display/alien-tree-8.png" alt="alien tree 8"><span class="card-label">alien tree 8</span></div>
 <div class="card"><img src="../assets/display/alien-tree-9.png" alt="alien tree 9"><span class="card-label">alien tree 9</span></div>
@@ -95,7 +53,13 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card"><img src="../assets/display/data-terminal-3.png" alt="data terminal 3"><span class="card-label">data terminal 3</span></div>
 <div class="card"><img src="../assets/display/data-terminal-4.png" alt="data terminal 4"><span class="card-label">data terminal 4</span></div>
 <div class="card"><img src="../assets/display/data-terminal-5.png" alt="data terminal 5"><span class="card-label">data terminal 5</span></div>
+<div class="card"><img src="../assets/display/data-terminal-styled-2d2ae61c.png" alt="data terminal styled 2d2ae61c"><span class="card-label">data terminal styled 2d2ae61c</span></div>
+<div class="card"><img src="../assets/display/data-terminal-styled-9cb9811b.png" alt="data terminal styled 9cb9811b"><span class="card-label">data terminal styled 9cb9811b</span></div>
+<div class="card"><img src="../assets/display/data-terminal-styled-de48d693.png" alt="data terminal styled de48d693"><span class="card-label">data terminal styled de48d693</span></div>
+<div class="card"><img src="../assets/display/iso-campfire.png" alt="iso campfire"><span class="card-label">iso campfire</span></div>
 <div class="card"><img src="../assets/display/iso-crashed-hull.png" alt="iso crashed hull"><span class="card-label">iso crashed hull</span></div>
+<div class="card"><img src="../assets/display/iso-crystal-cluster.png" alt="iso crystal cluster"><span class="card-label">iso crystal cluster</span></div>
+<div class="card"><img src="../assets/display/iso-dougs-shelter.png" alt="iso dougs shelter"><span class="card-label">iso dougs shelter</span></div>
 <div class="card"><img src="../assets/display/jellyfish-1.png" alt="jellyfish 1"><span class="card-label">jellyfish 1</span></div>
 <div class="card"><img src="../assets/display/jellyfish-2.png" alt="jellyfish 2"><span class="card-label">jellyfish 2</span></div>
 <div class="card"><img src="../assets/display/jellyfish-3.png" alt="jellyfish 3"><span class="card-label">jellyfish 3</span></div>
@@ -104,30 +68,27 @@ footer{text-align:center;padding:2rem 0;font-size:0.5rem;color:#2a2520;letter-sp
 <div class="card"><img src="../assets/display/planet-2.png" alt="planet 2"><span class="card-label">planet 2</span></div>
 <div class="card"><img src="../assets/display/ruin-archway-1.png" alt="ruin archway 1"><span class="card-label">ruin archway 1</span></div>
 <div class="card"><img src="../assets/display/ruin-archway-2.png" alt="ruin archway 2"><span class="card-label">ruin archway 2</span></div>
+<div class="card"><img src="../assets/display/save-beacon-0ef55698.png" alt="save beacon 0ef55698"><span class="card-label">save beacon 0ef55698</span></div>
+<div class="card"><img src="../assets/display/save-beacon-1fce41cc.png" alt="save beacon 1fce41cc"><span class="card-label">save beacon 1fce41cc</span></div>
+<div class="card"><img src="../assets/display/save-beacon-ed6e4804.png" alt="save beacon ed6e4804"><span class="card-label">save beacon ed6e4804</span></div>
+<div class="card"><img src="../assets/display/save-beacon-fab9fc15.png" alt="save beacon fab9fc15"><span class="card-label">save beacon fab9fc15</span></div>
+<div class="card"><img src="../assets/display/save-beacon-styled-67761ec4.png" alt="save beacon styled 67761ec4"><span class="card-label">save beacon styled 67761ec4</span></div>
+<div class="card"><img src="../assets/display/save-beacon-styled-e3d39ecb.png" alt="save beacon styled e3d39ecb"><span class="card-label">save beacon styled e3d39ecb</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-548984a4.png" alt="scrap pile 548984a4"><span class="card-label">scrap pile 548984a4</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-82610394.png" alt="scrap pile 82610394"><span class="card-label">scrap pile 82610394</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-cfec9cf3.png" alt="scrap pile cfec9cf3"><span class="card-label">scrap pile cfec9cf3</span></div>
+<div class="card"><img src="../assets/display/scrap-pile-f17a7828.png" alt="scrap pile f17a7828"><span class="card-label">scrap pile f17a7828</span></div>
 <div class="card"><img src="../assets/display/treasure-chest-1.png" alt="treasure chest 1"><span class="card-label">treasure chest 1</span></div>
 <div class="card"><img src="../assets/display/treasure-chest-2.png" alt="treasure chest 2"><span class="card-label">treasure chest 2</span></div>
 <div class="card"><img src="../assets/display/treasure-chest-3.png" alt="treasure chest 3"><span class="card-label">treasure chest 3</span></div>
 <div class="card"><img src="../assets/display/treasure-chest-4.png" alt="treasure chest 4"><span class="card-label">treasure chest 4</span></div>
 <div class="card"><img src="../assets/display/treasure-chest-5.png" alt="treasure chest 5"><span class="card-label">treasure chest 5</span></div>
 <div class="card"><img src="../assets/display/treasure-chest-6.png" alt="treasure chest 6"><span class="card-label">treasure chest 6</span></div>
-<div class="card"><img src="../assets/display/treasure-chest-7.png" alt="treasure chest 7"><span class="card-label">treasure chest 7</span></div>
-</div>
-</section>
-
-<section>
-<h2>Tilesets</h2>
-<div class="grid"><div class="card wide"><img src="../assets/display/tileset-alien-grass.png" alt="alien grass"><span class="card-label">alien grass</span></div>
+<div class="card"><img src="../assets/display/treasure-chest-7.png" alt="treasure chest 7"><span class="card-label">treasure chest 7</span></div></div></section>
+<section><h2>Tilesets</h2><div class="grid"><div class="card wide"><img src="../assets/display/tileset-alien-grass.png" alt="alien grass"><span class="card-label">alien grass</span></div>
 <div class="card wide"><img src="../assets/display/tileset-red-wasteland.png" alt="red wasteland"><span class="card-label">red wasteland</span></div>
 <div class="card wide"><img src="../assets/display/tileset-station-interior.png" alt="station interior"><span class="card-label">station interior</span></div>
-<div class="card wide"><img src="../assets/display/tileset-void-cliff.png" alt="void cliff"><span class="card-label">void cliff</span></div>
-</div>
-</section>
-
+<div class="card wide"><img src="../assets/display/tileset-void-cliff.png" alt="void cliff"><span class="card-label">void cliff</span></div></div></section>
 <p class="quote">"He stares into the abyss, and with the abyss staring back, he smiles."</p>
 <footer>mute. &mdash; a game about staying bright</footer>
-</div>
-<script>
-!function(){var s=document.getElementById('sf');for(var i=0;i<200;i++){var d=document.createElement('div');d.className='star';var z=Math.random()<.1?2:1;d.style.cssText='width:'+z+'px;height:'+z+'px;left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;--lo:'+(Math.random()*.1).toFixed(2)+';--hi:'+(0.3+Math.random()*.6).toFixed(2)+';--dur:'+(2+Math.random()*6).toFixed(1)+'s;animation-delay:'+(Math.random()*6).toFixed(1)+'s';s.appendChild(d)}}()
-</script>
-</body>
-</html>
+</div><script>!function(){var s=document.getElementById('sf');for(var i=0;i<200;i++){var d=document.createElement('div');d.className='star';var z=Math.random()<.1?2:1;d.style.cssText='width:'+z+'px;height:'+z+'px;left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;--lo:'+(Math.random()*.1).toFixed(2)+';--hi:'+(0.3+Math.random()*.6).toFixed(2)+';--dur:'+(2+Math.random()*6).toFixed(1)+'s;animation-delay:'+(Math.random()*6).toFixed(1)+'s';s.appendChild(d)}}</script></body></html>
